@@ -132,3 +132,5 @@ LOGIN_REDIRECT_URL = "blog-home"
 
 LOGIN_URL = "login"
 
+STATICFILES_STORAGE ='whitenoise.storage.CompressedManifestStaticFilesStorage'
+
