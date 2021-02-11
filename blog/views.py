@@ -7,7 +7,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 @login_required
 def home(request):
     context = {
-        'posts': Post.objects.all()
+        # 'posts': Post.objects.all()
+        'posts': None
     }
 
     return render(request, 'blog/home.html', context)
