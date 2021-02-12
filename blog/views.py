@@ -19,9 +19,16 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
-class PostDetailView(DetailView):
+class PostDetailView(DetailView): 
     model = Post
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(kwargs["object"].content)
+        context['content_list'] = kwargs["object"].content.splitlines()
+        return context
+
+    
 
 class PostCreateView(LoginRequiredMixin,CreateView):
     model = Post    

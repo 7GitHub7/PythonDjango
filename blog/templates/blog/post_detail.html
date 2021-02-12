@@ -18,7 +18,15 @@
             </div>
 
             <h2 class="article-title"> {{ object.title }} </h2>
-            <p class="article-content">{{ object.content }}</p>,
+            {% for line in content_list %}
+
+                 {%if "src" in line%}
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="img-responsive" alt="image post"></a>
+                {%else%}
+                    <p class="article-content">{{ line }}</p>
+                {%endif%}
+
+            {% endfor %}     
 
         </div>
     </article>
