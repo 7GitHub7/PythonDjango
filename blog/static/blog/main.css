@@ -84,3 +84,13 @@ body {
   }
 
   .banner-section{background-image:url("https://static.pexels.com/photos/373912/pexels-photo-373912.jpeg"); background-size:cover; height: 380px; left: 0; position: absolute; top: 0; background-position:0;}
+
+  .landscape {
+    height: 100px;
+    width: 100px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
