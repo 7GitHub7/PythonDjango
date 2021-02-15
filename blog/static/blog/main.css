@@ -1,4 +1,4 @@
-body {
+/* body {
     background: #fafafa;
     color: #333333;
     margin-top: 5rem;
@@ -89,8 +89,131 @@ body {
     height: 100px;
     width: 100px;
 }
-
+ */
 img {
   max-width: 100%;
   max-height: 100%;
+} 
+
+@import url(../css/font.css);
+
+html,body{
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+:root{
+    --text-gray:#3f4954;
+    --text-light:#686666da;
+    --bg-color:#0f0f0f;
+    --white: #ffffff;
+    --midnight: #104f55;
+
+    --sky: background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+    --Abel:'Abel',cursive;
+}
+
+/* Global classes */
+
+a{
+    text-decoration: none;
+    color:var(--text-gray);
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+
+}
+
+ul{
+    list-style-type: none;
+}
+
+
+/* Global classes */
+
+/* navbar */
+.nav{
+    background: white;
+    padding: 0 2rem;
+    height: 0rem;
+    min-height: 10vh;
+    overflow: hidden;
+}
+
+.nav .nav-brand a{
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
+    font-family: var(--Abel);
+    font-size: 1.6rem;
+    
+}
+
+.nav .nav-menu{
+    justify-content: space-between;
+}
+
+.nav .nav-items{
+    
+    display: flex;
+    margin: 0;
+}
+
+.nav .nav-items .nav-link{
+    padding: 1.6rem 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    font-family: var(--Abel);
+}
+
+.nav .nav-items .nav-link:hover{
+   background-color: var(--midnight);
+}
+.nav .nav-items .nav-link:hover a{
+    color: var(--white);
+ }
+
+ .nav .social{
+    padding: 1.4rem 0
+}
+
+.nav .social i{
+    padding: 0 .2rem;
+    
+}
+
+.nav .social i:hover{
+    color: #a1c4cf;
+}
+/* navbar */
+
+
+main .site-title{
+    background-image: url("back.jpg");    
+    /* background-size: cover; */
+    background-size: 100% 100%;   
+    background-repeat: no-repeat;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+}
+
+main .site-title .site-background{
+    padding-top: 20rem;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 4px 4px #546A7B;
+}
+
+main .site-title h1,h3{
+    margin: .3rem;
+}
+
+.btn{
+    margin: 1.8rem;
+    background: var(--sky);
 }
