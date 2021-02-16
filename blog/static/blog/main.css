@@ -215,5 +215,5 @@ main .site-title h1,h3{
 
 .btn{
     margin: 1.8rem;
-    background: var(--sky);
+    /* background: var(--sky); */
 }
