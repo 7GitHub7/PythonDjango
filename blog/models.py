@@ -13,9 +13,9 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default = timezone.now)
     author = models.ForeignKey(User, on_delete = models.CASCADE)
     image = ProcessedImageField(default = 'default.jpg', upload_to = 'profile_pics',
-                                           processors=[ResizeToFill(200, 200)],
+                                           processors=[ResizeToFill(1920, 1024)],
                                            format='JPEG',
-                                           options={'quality': 60})
+                                           options={'quality': 40})
 
     def __str__(self):
         return self.title
