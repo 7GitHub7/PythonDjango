@@ -24,8 +24,9 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(kwargs["object"].content)
+        # print(kwargs["object"].content)
         context['content_list'] = kwargs["object"].content.splitlines()
+        print(context['content_list'][0])
         return context
 
     

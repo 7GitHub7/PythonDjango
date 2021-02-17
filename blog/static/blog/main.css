@@ -212,7 +212,7 @@ main .site-title-detail{
     background-image: url("back.jpg");  
     background-size: 100% 100%;   
     background-repeat: no-repeat;
-    height: 40vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
 }
