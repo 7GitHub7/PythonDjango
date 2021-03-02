@@ -18,6 +18,7 @@ class Post(models.Model):
                                            processors=[ResizeToFill(1920, 1024)],
                                            format='JPEG',
                                            options={'quality': 40})
+    category = models.CharField(max_length=100, default="kompedium")                                       
 
     def __str__(self):
         return self.title
