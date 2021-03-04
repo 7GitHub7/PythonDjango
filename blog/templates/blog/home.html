@@ -45,7 +45,7 @@
             </section>    
         </main>
 <div class="container-fluid">
- <div class="row justify-content-center px-4">
+<div class="row justify-content-center px-4">
     
 
     {% comment %} <div class="col-lg-8 col-md-11 col-10 mx-auto float-left"> {% endcomment %}
@@ -112,9 +112,9 @@
             <h3>Kategorie</h3>
             {% comment %} <p class='text-muted'>You can put any information here you'd like. {% endcomment %}
             <ul class="list-group">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">News</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Python</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Kompedium</a>
+                <a href="{% url 'blog-home' 'News' %}" class="list-group-item list-group-item-action list-group-item-dark">News</a>
+                <a href="{% url 'blog-home' 'Python' %}" class="list-group-item list-group-item-action list-group-item-dark">Python</a>
+                <a href="{% url 'blog-home' 'kompedium' %}" class="list-group-item list-group-item-action list-group-item-dark">Kompedium</a>
             </ul>
             </p>
         </div> 

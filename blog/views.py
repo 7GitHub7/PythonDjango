@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Post
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -7,7 +7,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 @login_required
 def home(request):
     context = {
-        'posts': Post.objects.all()
+        # 'posts': Post.objects.all()
+        'posts': Post.objects.filter(category = "test").all()
     }
 
     return render(request, 'blog/home.html', context)
@@ -15,9 +16,17 @@ def home(request):
 
 class PostListView(ListView):
     model = Post
+    
     template_name = 'blog/home.html' # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
+
+    def get_queryset(self):
+        if 'category' in self.kwargs:
+            return Post.objects.filter(category=self.kwargs['category']).all()
+        else:
+            return Post.objects.filter(category="kompedium").all()    
+
 
 class PostDetailView(DetailView): 
     model = Post
@@ -33,7 +42,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin,CreateView):
     model = Post    
-    fields = ['title','content', 'image']
+    fields = ['title','content', 'image', 'category']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -67,3 +76,9 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
     return render(request, 'blog/about.html',{'title':'About'}),
 
+def category(request):
+    context = {
+        # 'posts': Post.objects.all()
+        'posts': Post.objects.filter(category = "kompedium")
+    }
+    return render(request,'blog/home.html',context )
