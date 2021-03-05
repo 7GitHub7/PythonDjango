@@ -76,9 +76,3 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
     return render(request, 'blog/about.html',{'title':'About'}),
 
-def category(request):
-    context = {
-        # 'posts': Post.objects.all()
-        'posts': Post.objects.filter(category = "kompedium")
-    }
-    return render(request,'blog/home.html',context )
