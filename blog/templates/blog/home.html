@@ -53,7 +53,7 @@
     {% for post in posts %}
                 <br>
                 <div class="row" >
-                    <div class="card shadow blog_center__div ">
+                    <div class="card shadow px-5">
                         <div class="d-flex justify-content-center align-items-center flex-column pt-3 pb-5 ">
                             <h1 class="text-uppercase">{{ post.title }}</h1>
                             <p class="blog_title"> <span class="font-weight-bold"> Title description, </span> {{ post.date_posted|date:"F d, Y" }} </p>
@@ -66,24 +66,24 @@
                                 </figure>
                             </div>
                             <div class = "col">
-                                <p><span class="font-weight-bold">Test</span> {{post.content|striptags|safe|truncatewords:"70"}} </p>
+                                <p><span class="font-weight-bold"></span> {{post.content|striptags|safe|truncatewords:"70"}} </p>
                                 
                             </div>    
                         </div>
                         {%else%}
                         <div class="row">
-                            <div class = "col">
+                            <div class = "col px-10">
                                 <p><span class="font-weight-bold"></span>{{post.content|striptags|safe|truncatewords:"70" }}</p>
                                 
                             </div> 
-                            <div class = "col">
+                            <div class = "col px-3">
                                 <figure class="right_side_img mb-5">
                                     <img src="{{ post.image.url }}" class="img-fluid shadow">
                                 </figure>
                             </div>   
                         </div>
                         {% endif %}
-                        <a class="btn btn-dark" href="{%url 'post-detail' post.id%}" role="button">Read More</a> 
+                        <a class="btn btn-dark mx-0" href="{%url 'post-detail' post.id%}" role="button">Read More</a> 
                     </div>
                     
                 </div>
